@@ -1,0 +1,92 @@
+@import '../../styles/main';
+
+.header {
+  height: 48px;
+
+  display: flex;
+  justify-content: space-between;
+
+  box-shadow: 0 1px 0 0 $elements;
+
+  @include on-desktop {
+    height: 64px;
+  }
+
+  &__left-side {
+    display: flex;
+
+    @include on-tablet {
+      gap: 16px;
+    }
+
+    @include on-desktop {
+      gap: 24px;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+  }
+
+  &__logo {
+    height: 100%;
+    width: 96px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include on-desktop {
+      width: 128px;
+    }
+  }
+
+  &__block-icon {
+    height: 100%;
+    width: 48px;
+
+    position: relative;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: -1px 0 0 0 $elements;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      width: 64px;
+
+      @include hover(background, $hover-background)
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      height: 3px;
+      width: 0;
+
+      bottom: 0;
+      background-color: $primary;
+      transition: width $effect-duration;
+    }
+
+    &--active {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--menu {
+      display: flex;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+}

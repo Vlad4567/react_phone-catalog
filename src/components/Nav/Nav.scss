@@ -1,0 +1,63 @@
+@import '../../styles/main';
+
+.nav {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    gap: 32px;
+
+    @include on-desktop {
+      gap: 64px;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__item-link {
+    @include upper-case-font;
+
+    position: relative;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: $secondary;
+
+    @include hover(color, $primary);
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      height: 3px;
+      width: 0;
+
+      bottom: 0;
+      background-color: $primary;
+      transition: width $effect-duration;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &--active {
+      color: $primary;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

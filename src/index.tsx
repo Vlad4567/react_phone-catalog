@@ -1,5 +1,9 @@
+import 'reset-css';
+import 'normalize.css';
+import './styles/main.scss';
+import './index.scss';
 import { createRoot } from 'react-dom/client';
-import { App } from './App';
+import { Router } from './Router';
 
 createRoot(document.getElementById('root') as HTMLElement)
-  .render(<App />);
+  .render(<Router />);
