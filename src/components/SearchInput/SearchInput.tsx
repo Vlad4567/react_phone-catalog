@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useState } from 'react';
 import './SearchInput.scss';
-import { useDebounce } from '../../hooks/useDebounce';
+import { useDebounce } from 'usehooks-ts';
 
 interface Props {
   onChange?: (c: string) => void

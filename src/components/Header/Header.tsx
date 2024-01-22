@@ -12,7 +12,7 @@ const getClassBlockIcon = ({ isActive }: { isActive: boolean }) => {
 
 export const Header: React.FC = () => {
   return (
-    <header className="header">
+    <header className="header" id="header">
       <div className="header__left-side">
         <Link to="/" className="header__logo">
           <i className="icon icon--logo" />

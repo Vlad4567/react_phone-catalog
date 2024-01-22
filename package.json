@@ -21,7 +21,8 @@
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
     "reset-css": "^5.0.2",
-    "sass": "^1.69.7"
+    "sass": "^1.69.7",
+    "usehooks-ts": "^2.9.5"
   },
   "devDependencies": {
     "@cypress/webpack-dev-server": "^1.8.4",
