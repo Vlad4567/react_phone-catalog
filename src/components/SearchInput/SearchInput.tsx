@@ -4,21 +4,29 @@ import { useEffect, useState } from 'react';
 import './SearchInput.scss';
 import { useDebounce } from 'usehooks-ts';
 
+interface ClassName {
+  block: string,
+  input: string,
+  icon: string,
+}
+
+const defaultClassName = {
+  block: '',
+  input: '',
+  icon: '',
+};
+
 interface Props {
   onChange?: (c: string) => void
   value?: string
-  className?: string
-  classNameInput?: string
-  classNameIcon?: string
+  className?: ClassName
   placeholder?: string
 }
 
 export const SearchInput: React.FC<Props> = ({
   onChange = () => {},
   value = '',
-  className = '',
-  classNameInput = '',
-  classNameIcon = '',
+  className = defaultClassName,
   placeholder = '',
 }) => {
   const [searchValue, setSearchValue] = useState(value);
@@ -27,14 +35,14 @@ export const SearchInput: React.FC<Props> = ({
   useEffect(() => onChange(debounceValue), [debounceValue, onChange]);
 
   return (
-    <search className={`search-item ${className}`}>
+    <search className={`search-item ${className.block}`}>
 
       <input
         type="text"
         id="search-item-input"
         onChange={(e) => setSearchValue(e.target.value)}
         value={searchValue}
-        className={`search-item__input ${classNameInput}`}
+        className={`search-item__input ${className.input}`}
         placeholder={placeholder}
       />
 
@@ -42,14 +50,14 @@ export const SearchInput: React.FC<Props> = ({
         searchValue.length
           ? (
             <i
-              className={`search-item__icon search-item__icon--close icon icon--close ${classNameIcon}`}
+              className={`search-item__icon search-item__icon--close icon icon--close ${className.icon}`}
               onClick={() => setSearchValue('')}
             />
           ) : (
             // eslint-disable-next-line jsx-a11y/label-has-associated-control
             <label htmlFor="search-item-input">
               <i
-                className={`search-item__icon search-item__icon--search icon icon--search ${classNameIcon}`}
+                className={`search-item__icon search-item__icon--search icon icon--search ${className.icon}`}
               />
             </label>
           )
