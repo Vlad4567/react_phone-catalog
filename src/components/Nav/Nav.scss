@@ -2,6 +2,7 @@
 
 .nav {
   display: none;
+  justify-content: center;
 
   @include on-tablet {
     display: flex;
@@ -18,6 +19,7 @@
 
   &__item {
     display: flex;
+    justify-content: center;
   }
 
   &__item-link {
