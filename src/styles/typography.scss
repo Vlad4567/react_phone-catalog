@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   font-family: Mont, sans-serif;
   font-weight: bold;
@@ -39,7 +43,6 @@ h3 {
 
 h4 {
   font-family: Mont, sans-serif;
-  font-weight: 600;
   font-size: 16px;
   line-height: 20px;
 
@@ -51,7 +54,27 @@ h4 {
 
 button {
   font-family: Mont, sans-serif;
-  font-weight: 600;
-  font-weight: 14px;
+  font-weight: 700;
+  font-size: 14px;
   line-height: 21px;
+}
+
+html {
+  cursor: url("../img/cursor-mouse-mice.svg"), auto;
+}
+
+body {
+  font-family: Mont, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+
+  position: relative;
+  min-height: 300vh;
+}
+
+small {
+  font-family: Mont, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
 }

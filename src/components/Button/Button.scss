@@ -1,0 +1,25 @@
+@import '../../styles/main';
+
+.button {
+  width: 176px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: $primary;
+  color: $white;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.40);
+  }
+
+  &--active {
+    border: 1px solid $elements;
+    background-color: $white;
+    color: $green;
+  }
+}

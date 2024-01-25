@@ -70,3 +70,9 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+@mixin body-text {
+  font-family: Mont, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
