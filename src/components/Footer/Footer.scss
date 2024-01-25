@@ -10,6 +10,7 @@
 
   position: absolute;
   bottom: 0;
+  z-index: -1;
 
   background-color: $white;
   box-shadow: 0 -1px 0 0 $elements;
@@ -80,12 +81,6 @@
       background-color: $white;
 
       cursor: pointer;
-
-      &--fixed {
-        position: fixed;
-        right: 50px;
-        bottom: 50px;
-      }
     }
   }
 }

@@ -1,16 +1,15 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 import './Header.scss';
 import { Nav } from '../Nav/Nav';
-
-const getClassBlockIcon = ({ isActive }: { isActive: boolean }) => {
-  return `header__block-icon ${
-    isActive
-      ? 'header__block-icon--active'
-      : ''
-  }`;
-};
+import { NavIcons } from '../NavIcons/NavIcons';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import * as menuSlice from '../../features/menuSlice';
 
 export const Header: React.FC = () => {
+  const { shown } = useAppSelector(state => state.menuSlice);
+  const dispatch = useAppDispatch();
+
   return (
     <header className="header" id="header">
       <div className="header__left-side">
@@ -22,26 +21,28 @@ export const Header: React.FC = () => {
       </div>
 
       <div className="header__right-side">
-        <NavLink
-          to="/favourites"
-          className={getClassBlockIcon}
-        >
-          <i className="icon icon--favourites" />
-        </NavLink>
+        <NavIcons
+          className={{
+            navLink: 'header__block-icon',
+            navLinkActive: 'header__block-icon--active',
+          }}
+        />
 
-        <NavLink
-          to="/shopping-bag"
-          className={getClassBlockIcon}
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <button
+          type="button"
+          className={classNames('header__block-icon header__block-icon--menu', {
+            'header__block-icon--active': shown,
+          })}
+          onClick={() => dispatch(menuSlice.toggle())}
         >
-          <i className="icon icon--shopping-bag" />
-        </NavLink>
-
-        <Link
-          to="/menu"
-          className="header__block-icon header__block-icon--menu"
-        >
-          <i className="icon icon--menu" />
-        </Link>
+          <i
+            className={classNames('icon', {
+              'icon--menu': !shown,
+              'icon--close': shown,
+            })}
+          />
+        </button>
       </div>
     </header>
   );

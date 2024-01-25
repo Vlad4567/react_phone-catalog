@@ -1,0 +1,62 @@
+@import '../../styles/main';
+
+.menu {
+  width: 100%;
+  height: calc(100vh - $header-height);
+  padding-block: 24px;
+
+  position: absolute;
+  z-index: 1;
+
+  background-color: $white;
+  box-shadow: 1px 1px 0 0 $elements;
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transition: opacity $effect-duration;
+  }
+
+  &-exit {
+    transform: translateX(0);
+  }
+
+  &-exit-active {
+    transform: translateX(-100%);
+    transition: transform $effect-duration;
+  }
+
+  &__nav {
+    display: flex;
+
+    &-list {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-item {
+      height: 27px;
+    }
+  }
+
+  &__bottom {
+    height: 64px;
+    width: 100%;
+
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      box-shadow: -1px -1px 0 0 $elements;
+    }
+  }
+}

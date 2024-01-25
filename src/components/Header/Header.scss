@@ -1,12 +1,16 @@
 @import '../../styles/main';
 
 .header {
-  height: 48px;
+  height: $header-height;
+
+  position: relative;
+  z-index: 2;
 
   display: flex;
   justify-content: space-between;
 
   box-shadow: 0 1px 0 0 $elements;
+  background-color: $white;
 
   @include on-desktop {
     height: 64px;
@@ -30,7 +34,7 @@
 
   &__logo {
     height: 100%;
-    width: 96px;
+    width: 76px;
 
     display: flex;
     justify-content: center;
@@ -51,38 +55,21 @@
     justify-content: center;
     align-items: center;
 
-    box-shadow: -1px 0 0 0 $elements;
-
     @include on-tablet {
       display: flex;
     }
 
     @include on-desktop {
       width: 64px;
-
-      @include hover(background, $hover-background)
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-
-      height: 3px;
-      width: 0;
-
-      bottom: 0;
-      background-color: $primary;
-      transition: width $effect-duration;
-    }
-
-    &--active {
-      &::after {
-        width: 100%;
-      }
     }
 
     &--menu {
       display: flex;
+
+      background-color: $white;
+      border: none;
+
+      box-shadow: -1px 0 0 0 $elements;
 
       @include on-tablet {
         display: none;
