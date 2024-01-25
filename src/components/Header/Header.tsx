@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import './Header.scss';
+import { useLockedBody } from 'usehooks-ts';
 import { Nav } from '../Nav/Nav';
 import { NavIcons } from '../NavIcons/NavIcons';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -9,6 +10,12 @@ import * as menuSlice from '../../features/menuSlice';
 export const Header: React.FC = () => {
   const { shown } = useAppSelector(state => state.menuSlice);
   const dispatch = useAppDispatch();
+  const [locked, setLocked] = useLockedBody(false, 'root');
+
+  const handleMenuClick = () => {
+    dispatch(menuSlice.toggle());
+    setLocked(!locked);
+  };
 
   return (
     <header className="header" id="header">
@@ -34,7 +41,7 @@ export const Header: React.FC = () => {
           className={classNames('header__block-icon header__block-icon--menu', {
             'header__block-icon--active': shown,
           })}
-          onClick={() => dispatch(menuSlice.toggle())}
+          onClick={handleMenuClick}
         >
           <i
             className={classNames('icon', {
