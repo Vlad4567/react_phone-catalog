@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import './Header.scss';
 import { useLockedBody } from 'usehooks-ts';
@@ -6,6 +5,7 @@ import { Nav } from '../Nav/Nav';
 import { NavIcons } from '../NavIcons/NavIcons';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import * as menuSlice from '../../features/menuSlice';
+import { Logo } from '../Logo/Logo';
 
 export const Header: React.FC = () => {
   const { shown } = useAppSelector(state => state.menuSlice);
@@ -20,9 +20,7 @@ export const Header: React.FC = () => {
   return (
     <header className="header" id="header">
       <div className="header__left-side">
-        <Link to="/" className="header__logo">
-          <i className="icon icon--logo" />
-        </Link>
+        <Logo className="header__logo" />
 
         <Nav />
       </div>

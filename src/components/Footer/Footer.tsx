@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Footer.scss';
+import { Logo } from '../Logo/Logo';
 
 const scrollUp = () => window.scroll({
   top: 0,
@@ -9,9 +10,7 @@ const scrollUp = () => window.scroll({
 export const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <Link to="/" className="footer__logo">
-        <i className="icon icon--logo" />
-      </Link>
+      <Logo />
 
       <nav className="footer__nav">
         <ul className="footer__nav-list">
