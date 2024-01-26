@@ -1,0 +1,24 @@
+@import '../../styles/main';
+
+.button-favourites {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid $icons;
+  background-color: $white;
+
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+
+  &--active {
+    border: 1px solid $elements;
+  }
+}

@@ -3,6 +3,7 @@
 .button {
   width: 176px;
   height: 40px;
+  padding: 0;
 
   display: flex;
   justify-content: center;
@@ -11,7 +12,8 @@
   border: none;
   background-color: $primary;
   color: $white;
-  box-sizing: border-box;
+
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.40);
