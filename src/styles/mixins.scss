@@ -63,8 +63,7 @@
 }
 
 @mixin upper-case-font {
-  font-family: Mont, sans-serif;
-  font-weight: bold;
+  font-family: Mont-Bold, sans-serif;
   font-size: 12px;
   line-height: 11px;
   letter-spacing: 0.04em;
@@ -72,7 +71,7 @@
 }
 
 @mixin body-text {
-  font-family: Mont, sans-serif;
+  font-family: Mont-Regular, sans-serif;
   font-size: 14px;
   line-height: 21px;
 }

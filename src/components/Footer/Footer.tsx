@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
 
       <div className="footer__block-back">
         <label className="footer__block-back-title-label" htmlFor="button-back">
-          <p className="footer__block-back-title">Back to top</p>
+          <small className="footer__block-back-title">Back to top</small>
         </label>
 
         {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}

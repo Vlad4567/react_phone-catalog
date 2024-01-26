@@ -3,8 +3,7 @@
 }
 
 h1 {
-  font-family: Mont, sans-serif;
-  font-weight: bold;
+  font-family: Mont-Bold, sans-serif;
   font-size: 32px;
   line-height: 41px;
   letter-spacing: -0.01em;
@@ -16,8 +15,7 @@ h1 {
 }
 
 h2 {
-  font-family: Mont, sans-serif;
-  font-weight: bold;
+  font-family: Mont-Bold, sans-serif;
   font-size: 22px;
   line-height: 31px;
 
@@ -29,20 +27,19 @@ h2 {
 }
 
 h3 {
-  font-family: Mont, sans-serif;
-  font-weight: 600;
+  font-family: Mont-SemiBold, sans-serif;
   font-size: 20px;
   line-height: 26px;
 
   @include on-tablet {
-    font-weight: bold;
+    font-family: Mont-Bold, sans-serif;
     font-size: 22px;
     line-height: 31px;
   }
 }
 
 h4 {
-  font-family: Mont, sans-serif;
+  font-family: Mont-SemiBold, sans-serif;
   font-size: 16px;
   line-height: 20px;
 
@@ -52,9 +49,8 @@ h4 {
   }
 }
 
-button {
-  font-family: Mont, sans-serif;
-  font-weight: 700;
+button, input {
+  font-family: Mont-SemiBold, sans-serif;
   font-size: 14px;
   line-height: 21px;
 }
@@ -64,17 +60,14 @@ html {
 }
 
 body {
-  font-family: Mont, sans-serif;
-  font-size: 14px;
-  line-height: 21px;
+  @include body-text;
 
   position: relative;
   min-height: 300vh;
 }
 
 small {
-  font-family: Mont, sans-serif;
-  font-weight: 600;
+  font-family: Mont-SemiBold, sans-serif;
   font-size: 12px;
   line-height: 15px;
 }
