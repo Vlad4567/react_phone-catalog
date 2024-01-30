@@ -1,0 +1,33 @@
+@import '../../styles/main';
+
+.button-arrow {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid $icons;
+  background-color: $white;
+
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+
+  &:disabled {
+    border: 1px solid $elements;
+    cursor: $cursor;
+  }
+
+  &__img {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(1%) saturate(4715%) hue-rotate(193deg) brightness(97%) contrast(93%);
+  }
+
+  &:disabled &__img {
+    filter: none;
+  }
+}
