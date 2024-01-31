@@ -1,5 +1,11 @@
 @import './styles/main';
 
 .main {
+  @include content-padding-inline;
+
   background-color: $white;
+
+  @include on-desktop {
+    width: 1136px;
+  }
 }

@@ -27,25 +27,32 @@
   }
 
   &__image {
-    width: 148px;
-    height: 129px;
-    background-size: contain;
+    position: absolute;
+    height: 100%;
+  }
+
+  &__image-block {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 129px;
 
     @include on-tablet {
-      width: 173px;
-      height: 202px;
+      max-height: 202px;
     }
 
     @include on-desktop {
-      width: 208px;
-      height: 196px;
+      max-height: 196px;
     }
   }
 
   &__name {
     @include body-text;
 
-    height: 42px;
+    flex-shrink: 0;
+    min-height: 42px;
 
     padding-top: 16px;
     box-sizing: content-box;

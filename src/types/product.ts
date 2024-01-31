@@ -1,63 +1,40 @@
 export interface Product {
-  age: number,
-  id: string,
-  type: 'phone' | 'tablet' | 'accessory',
-  imageUrl: string,
+  id: number,
+  category: 'phones' | 'tablets' | 'accessories',
+  itemId: string,
   name: string,
-  snippet: string,
+  fullPrice: number,
   price: number,
-  discount: number,
   screen: string,
   capacity: string,
+  color: string,
   ram: string,
+  year: number,
+  image: string;
 }
 
 export interface ProductDetails {
-  additionalFeatures: string,
-  android: {
-    os: string,
-    ui: string,
-  },
-  availability: string[],
-  battery: {
-    standbyTime: string,
-    talkTime: string,
-    type: string,
-  },
-  camera: {
-    features: string[],
-    primary: string,
-  },
-  connectivity: {
-    bluetooth: string,
-    cell: string,
-    gps: boolean,
-    infrared: boolean,
-    wifi: string,
-  },
-  description: string,
-  display: {
-    screenResolution: string,
-    screenSize: string,
-    touchScreen: boolean,
-  },
-  hardware: {
-    accelerometer: boolean,
-    audioJack: string,
-    cpu: string,
-    fmRadio: boolean,
-    physicalKeyboard: boolean,
-    usb: string,
-  },
-  id: Pick<Product, 'id'>,
-  images: Pick<Product, 'imageUrl'>[],
-  name: Pick<Product, 'name'>,
-  sizeAndWeight: {
-    dimensions: string[],
-    weight: string
-  },
-  storage: {
-    flash: string,
-    ram: Pick<Product, 'ram'>,
-  }
+  id: string,
+  namespaceId: string,
+  name: string,
+  capacityAvailable: string[],
+  capacity: string,
+  priceRegular: number,
+  priceDiscount: number,
+  colorsAvailable: string[],
+  color: string,
+  images: string[],
+  description: ProductDetailsDescription[],
+  screen: string,
+  resolution: string,
+  processor: string,
+  ram: string,
+  camera: string,
+  zoom: string,
+  cell: string[]
+}
+
+interface ProductDetailsDescription {
+  title: string,
+  text: string[]
 }

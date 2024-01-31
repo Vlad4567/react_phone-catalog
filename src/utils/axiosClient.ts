@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://mate-academy.github.io/react_phone-catalog/api',
+  baseURL: 'https://mate-academy.github.io/react_phone-catalog/_new',
 });
 
 export const client = {

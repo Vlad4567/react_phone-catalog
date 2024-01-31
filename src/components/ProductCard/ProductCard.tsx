@@ -15,45 +15,45 @@ export const ProductCard: React.FC<Props> = ({ card }) => {
     = useToggleItemInArrayLocalStorage<Product['id']>('favourites');
   const {
     name,
+    fullPrice,
     price,
-    discount,
     screen,
     capacity,
     ram,
-    imageUrl,
+    image,
   } = card;
 
   const hasStorageCart = cart.some((e) => e === card.id);
   const hasFavourite = favourites.some((e) => e === card.id);
 
-  const discountedPrice = Math.round(price - ((price / 100) * discount));
-
   const changeCardPath = (item: string): string => {
     const saveItem = item.split('/');
 
-    saveItem[1] = 'products';
+    saveItem.unshift('_new');
 
     return saveItem.join('/');
   };
 
   return (
     <article className="product-card">
-      <img
-        src={changeCardPath(imageUrl)}
-        className="product-card__image"
-        alt={name}
-      />
+      <div className="product-card__image-block">
+        <img
+          src={changeCardPath(image)}
+          className="product-card__image"
+          alt={name}
+        />
+      </div>
 
       <p className="product-card__name">{name}</p>
 
       <div className="product-card__price-block">
         <h3 className="product-card__price">
-          {`$${discountedPrice}`}
+          {`$${price}`}
         </h3>
 
-        {discountedPrice === price || (
+        {price === fullPrice || (
           <h3 className="product-card__price-discount">
-            {`$${price}`}
+            {`$${fullPrice}`}
           </h3>
         )}
       </div>
